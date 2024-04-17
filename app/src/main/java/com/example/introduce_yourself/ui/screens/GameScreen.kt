@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
@@ -73,8 +74,12 @@ fun GameScreen(gameViewModel: GameViewModel = viewModel()) {
         Row {
             Button(
                 onClick = { gameViewModel.moveOne() },
-                elevation = ButtonDefaults.elevatedButtonElevation(),
-                modifier = Modifier.padding(10.dp)
+                elevation = ButtonDefaults.elevatedButtonElevation(
+                    defaultElevation = 10.dp
+                ),
+                modifier = Modifier
+                    .padding(10.dp)
+                    .width(100.dp)
             ) {
                 Text(
                     text = "+1",
@@ -83,8 +88,12 @@ fun GameScreen(gameViewModel: GameViewModel = viewModel()) {
             }
             Button(
                 onClick = { gameViewModel.moveThree() },
-                elevation = ButtonDefaults.elevatedButtonElevation(),
-                modifier = Modifier.padding(10.dp)
+                elevation = ButtonDefaults.elevatedButtonElevation(
+                    defaultElevation = 10.dp
+                ),
+                modifier = Modifier
+                    .padding(10.dp)
+                    .width(100.dp)
             ) {
                 Text(
                     text = "+3",
@@ -92,13 +101,15 @@ fun GameScreen(gameViewModel: GameViewModel = viewModel()) {
                 )
             }
         }
-        Row(
-
-        ) {
+        Row {
             Button(
                 onClick = { gameViewModel.backOne() },
-                elevation = ButtonDefaults.elevatedButtonElevation(),
-                modifier = Modifier.padding(10.dp),
+                elevation = ButtonDefaults.elevatedButtonElevation(
+                    defaultElevation = 10.dp
+                ),
+                modifier = Modifier
+                    .padding(10.dp)
+                    .width(100.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Red)
             ) {
                 Text(
@@ -108,8 +119,12 @@ fun GameScreen(gameViewModel: GameViewModel = viewModel()) {
             }
             Button(
                 onClick = { gameViewModel.backThree() },
-                elevation = ButtonDefaults.elevatedButtonElevation(),
-                modifier = Modifier.padding(10.dp),
+                elevation = ButtonDefaults.elevatedButtonElevation(
+                    defaultElevation = 10.dp
+                ),
+                modifier = Modifier
+                    .padding(10.dp)
+                    .width(100.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Red)
             ) {
                 Text(
